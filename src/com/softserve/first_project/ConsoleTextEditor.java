@@ -90,12 +90,8 @@ public class ConsoleTextEditor {
         textContent.setLength(0);
         textContent.append(updatedContent);
         printText();
-
     }
-
-
     private static void printText() {
-
         System.out.println("Current text:");
         System.out.println(textContent.toString());
     }
