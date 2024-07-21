@@ -108,7 +108,7 @@ public class App {
         Student.printStudents(students, 1);
 
         System.out.println("Students sorted by course:");
-        Collections.sort(students, Student.CourseComparator);
+        Collections.sort(students, Student.courseComparator);
         for (Student student : students) {
             System.out.println(student.getName() + " - " + student.getCourse());
         }

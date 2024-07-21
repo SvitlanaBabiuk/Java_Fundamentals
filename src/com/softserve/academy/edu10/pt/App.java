@@ -96,14 +96,39 @@ public class App {
 
     public static void addEmployee(Map<Integer, Employee> employeeMap, Scanner scanner) {
         System.out.println("Enter ID, Name, Position, Salary, Date of Birth:");
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid input. Please enter an integer for the ID.");
+            return;
+        }
+
         int id = scanner.nextInt();
         if (employeeMap.containsKey(id)) {
             System.out.println("An employee with this ID already exists.");
             return;
         }
+
+        if (!scanner.hasNext()) {
+            System.out.println("Invalid input. Please enter a string for the name.");
+            return;
+        }
+
         String name = scanner.next();
+        if (!scanner.hasNext()) {
+            System.out.println("Invalid input. Please enter a string for the position.");
+            return;
+        }
+
         String position = scanner.next();
+        if (!scanner.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a double for the salary.");
+            return;
+        }
+
         double salary = scanner.nextDouble();
+        if (!scanner.hasNext()) {
+            System.out.println("Invalid input. Please enter a string for the date of birth.");
+            return;
+        }
         String dateOfBirth = scanner.next();
         employeeMap.put(id, new Employee(id, name, position, salary, dateOfBirth));
     }
@@ -122,7 +147,7 @@ public class App {
         System.out.println("Enter a name:");
         String name = scanner.next();
         for (Employee employee : employeeMap.values()) {
-            if (employee.name.equals(name)) {
+            if (employee.getName().equals(name)) {
                 System.out.println(employee);
                 return;
             }
@@ -152,11 +177,11 @@ public class App {
         employees.sort((e1, e2) -> {
             switch (criterion) {
                 case "id":
-                    return Integer.compare(e1.id, e2.id);
+                    return Integer.compare(e1.getId(), e2.getId());
                 case "name":
-                    return e1.name.compareTo(e2.name);
+                    return e1.getName().compareTo(e2.getName());
                 case "position":
-                    return e1.position.compareTo(e2.position);
+                    return e1.getPosition().compareTo(e2.getPosition());
                 default:
                     return 0;
             }

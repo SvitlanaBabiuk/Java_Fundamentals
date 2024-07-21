@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Student implements Comparable<Student> {
-    private String name;
-    private int course;
+    private final String name;
+    private final int course;
 
     public Student(String name, int course) {
         this.name = name;
@@ -36,7 +36,7 @@ public class Student implements Comparable<Student> {
         return this.name.compareTo(other.name);
     }
 
-    public static Comparator<Student> CourseComparator = new Comparator<Student>() {// Ok but should start from lower case
+    public static Comparator<Student> courseComparator = new Comparator<Student>() {// Ok but should start from lower case
         @Override
         public int compare(Student s1, Student s2) {
             return Integer.compare(s1.getCourse(), s2.getCourse());

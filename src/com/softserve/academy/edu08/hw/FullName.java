@@ -1,6 +1,6 @@
 package com.softserve.academy.edu08.hw;
 
-public class FullName {// add implementation of cloneable
+public class FullName  implements Cloneable {
     private String firstName;
     private String lastName;
 
@@ -23,5 +23,14 @@ public class FullName {// add implementation of cloneable
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public FullName clone() {
+        try {
+            return (FullName) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(); // Can't happen
+        }
     }
 }
