@@ -19,7 +19,6 @@ public class AppPt {
         pt2();
     }
 
-
     public static void pt1() {
         List<String> lines = readDataFromFile(PATH);
         String[] linesArray = lines.toArray(new String[0]);

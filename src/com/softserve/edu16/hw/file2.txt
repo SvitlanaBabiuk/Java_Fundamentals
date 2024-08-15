@@ -1,0 +1,4 @@
+The number of lines in file1.txt:9
+The longest line in file1.txt: One day, a humble farmer approached the tree. He didn't wish for riches or power; all he wanted was good health for his sick daughter. He
+Name:Pavlo Chernyavckiy
+Date of birthday:18/02/2004
