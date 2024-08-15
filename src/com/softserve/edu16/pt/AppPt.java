@@ -2,14 +2,12 @@ package com.softserve.edu16.pt;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 public class AppPt {
     public static String PATH = "src/com/softserve/edu16/pt/mytext.txt";
