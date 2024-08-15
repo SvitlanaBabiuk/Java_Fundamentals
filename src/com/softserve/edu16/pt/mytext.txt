@@ -1,0 +1,18 @@
+Java provides a mechanism, called object serialization where an object can be represented as a
+sequence of bytes that includes the object's data as well as information about the object's type and
+the var of data stored in the object.
+After a serialized object has been written into a file, it can be read from the file and deserialized that
+var object in memory
+Classes ObjectInputStream and ObjectOutputStream are high-level streams that contain the
+methods for serializing and deserializing an object
+Notice that for a class to be serialized successfully, two conditions must be met −
+var
+• All of the fields in the class must be serializable. If a field is not serializable, it must be marked
+transient
+var
+The ObjectOutputStream class contains many write methods for writing various data types, but one method in particular stands out − public final void writeObject(Object x) throws IOException
+The ObjectInputStream class contains the following method for deserializing an object
+public final Object readObject() throws IOException, ClassNotFoundException
+This method retrieves the next Object out of the stream and deserializes it. The return
+value is Object, so you will need to cast it to its appropriate data type.
+re errr
